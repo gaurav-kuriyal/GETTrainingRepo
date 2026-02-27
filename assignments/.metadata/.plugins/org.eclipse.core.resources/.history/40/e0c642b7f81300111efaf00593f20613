@@ -1,0 +1,13 @@
+package com.coforge.UniversityExam;
+
+public class ExamProcess {
+	static final int passMarks = 40;
+	final String examCode;
+	
+	public ExamProcess(String examCode) {
+		super();
+		this.examCode = examCode;
+	}
+	
+	
+}

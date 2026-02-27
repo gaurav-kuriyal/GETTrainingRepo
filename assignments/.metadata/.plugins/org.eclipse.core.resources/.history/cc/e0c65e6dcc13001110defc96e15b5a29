@@ -1,0 +1,23 @@
+package com.coforge;
+
+public class Card extends Payment {
+	
+	long cardNo;
+	int cvv;
+	String expDate;
+	
+	
+	
+	public Card(int amount) {
+		super(amount);
+	}
+	public Card(long cardNo, int cvv, String expDate, int amount) {
+		super(amount);
+		this.cardNo = cardNo;
+		this.cvv = cvv;
+		this.expDate = expDate;
+	}
+	public void pay() {
+		System.out.println("Payment Successfull");
+	}
+}

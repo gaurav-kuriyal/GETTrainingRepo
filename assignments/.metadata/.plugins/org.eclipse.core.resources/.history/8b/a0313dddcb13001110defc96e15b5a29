@@ -1,0 +1,8 @@
+package com.coforge;
+
+public class Payment {
+	int amt;
+	public Payment(int amt) {
+		this.amt = amt;
+	}
+}

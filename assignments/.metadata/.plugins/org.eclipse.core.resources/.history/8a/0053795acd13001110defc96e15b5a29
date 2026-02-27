@@ -1,0 +1,11 @@
+package com.coforge;
+
+public class Payment {
+	int amount;
+	public Payment(int amount) {
+		this.amount = amount;
+	}
+	public Payment() {
+		super();
+	}
+}
