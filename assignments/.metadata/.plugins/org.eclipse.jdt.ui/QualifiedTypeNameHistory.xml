@@ -2,10 +2,12 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="com.coforge.UniversityExam.UniversityExamRules"/>
     <fullyQualifiedTypeName name="com.coforge.UniversityExam.ExamProcess"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="com.coforge.MenuDrivenPayment.Payment"/>
     <fullyQualifiedTypeName name="com.coforge.MenuDrivenPayment.Wallet"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="com.coforge.MenuDrivenPayment.Card"/>
     <fullyQualifiedTypeName name="com.coforge.MenuDrivenPayment.UPI"/>
+    <fullyQualifiedTypeName name="com.coforge.InterfaceAssignment.MyInterface"/>
+    <fullyQualifiedTypeName name="com.coforge.InterfaceAssignment.MyClass"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>
