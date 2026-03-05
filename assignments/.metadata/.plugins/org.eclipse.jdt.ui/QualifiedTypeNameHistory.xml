@@ -9,7 +9,8 @@
     <fullyQualifiedTypeName name="com.coforge.MenuDrivenPayment.UPI"/>
     <fullyQualifiedTypeName name="com.coforge.InterfaceAssignment.MyInterface"/>
     <fullyQualifiedTypeName name="com.coforge.InterfaceAssignment.MyClass"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="com.coforge.Day6.Employee"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="com.coforge.Day6.EmployeeCRUD"/>
 </qualifiedTypeNameHistroy>
