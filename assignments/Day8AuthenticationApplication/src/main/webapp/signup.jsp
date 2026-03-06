@@ -3,29 +3,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-	<h1>SignUp Form</h1>
-	<form action="SignUpServlet" method="get" target="_blank" >
-		<label for="uname">Username: </label>
-		<br>
-		<input type="text" name="uname" />
-		<br>
-		<label for="pwd">Password: </label>
-		<br>
-		<input type="password" name="pwd" />
-		<br>
-		<label for="email">Email: </label>
-		<br>
-		<input type="email" name="email" />
-		<br>
-		<label for="mobile">Mobile Number: </label>
-		<br>
-		<input type="tel" name="mobile" />
-		<br>
-		<button>Sign Up</button>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white border">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/Day8AuthenticationApplication">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/Day8AuthenticationApplication">Home</a>
+        </li>
+      </ul>
+      <div class="d-flex gap-3">
+		<form action="signin.jsp">
+			<button class="btn btn-outline-primary">Sign In</button>
+		</form> 
+		<form action="signup.jsp">
+			<button class="btn btn-outline-info">Sign Up</button>
+		</form>    	
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container d-flex flex-column justify-content-center align-items-center">
+	<form action="SignUpServlet" method="get"  class="row g-3 w-50 m-3 p-3 border rounded">
+	    <legend>Sign Up</legend>
+	  
+	  <div class="col-md-6">
+	    <label for="uname" class="form-label">Username</label>
+	    <input type="text" class="form-control" required name="uname" id="uname">
+	  </div>
+	  <div class="col-md-6">
+	    <label for="pwd" class="form-label">Password</label>
+	    <input type="password" class="form-control" required name="pwd" id="pwd">
+	  </div>
+	  <div class="col-12">
+	    <label for="email" class="form-label">Email</label>
+	    <input type="email" class="form-control" required name="email" id="email" placeholder="example@domain.com">
+	  </div>
+	  <div class="col-12">
+	    <label for="mobile" class="form-label">Mobile</label>
+	    <input type="tel" class="form-control" required name="mobile" id="mobile" placeholder="+91 xxxx xxxx xx">
+	  </div>
+	  <div class="col-12">
+	    <button type="submit" class="btn btn-primary">Sign Up</button>
+	  </div>
 	</form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

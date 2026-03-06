@@ -4,13 +4,25 @@
     <fullyQualifiedTypeName name="com.coforge.UniversityExam.ExamProcess"/>
     <fullyQualifiedTypeName name="com.coforge.MenuDrivenPayment.Payment"/>
     <fullyQualifiedTypeName name="com.coforge.MenuDrivenPayment.Wallet"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="com.coforge.MenuDrivenPayment.Card"/>
     <fullyQualifiedTypeName name="com.coforge.MenuDrivenPayment.UPI"/>
     <fullyQualifiedTypeName name="com.coforge.InterfaceAssignment.MyInterface"/>
     <fullyQualifiedTypeName name="com.coforge.InterfaceAssignment.MyClass"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="com.coforge.Day6.Employee"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="com.coforge.Day6.EmployeeCRUD"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="java.sql.CallableStatement"/>
+    <fullyQualifiedTypeName name="java.sql.Types"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.Callable"/>
+    <fullyQualifiedTypeName name="java.lang.Comparable"/>
+    <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="com.coforge.User"/>
+    <fullyQualifiedTypeName name="com.coforge.UserCollection"/>
 </qualifiedTypeNameHistroy>
