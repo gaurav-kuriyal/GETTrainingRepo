@@ -37,7 +37,7 @@
 					</thead>
 					<tbody>
 						<% 
-							if(employeeList!=null && !employeeList.isEmpty() ) 
+							if(employeeList!=null && !employeeList.isEmpty() ) {
 								for(Employee emp:employeeList){
 						%>
 							<tr>
@@ -50,9 +50,13 @@
 								<td><%= emp.getDob() %> </td>
 								<td>
 									<a href="employee?action=edit&eid<%=emp.getEid() %>" class="btn btn-success">Edit</a>
-									<a href="employee?action=delete&eid<%=emp.getEid() %>" class="btn btn-danger">Delete</a>
+									<a href="employee?action=delete&eid<%=emp.getEid() %>" class="btn btn-danger" onClick="return('Confirm do you want to delete?')">Delete</a>
 								</td>
 							</tr>
+						<% }} else { %>
+								<tr>
+									<td colspan="8">No Employees found</td>
+								</tr>
 						<% } %>
 					</tbody>
 				</table>
