@@ -23,7 +23,7 @@ public class EmployeeDAO {
 			
 			while(rs.next()) {
 				Employee emp = new Employee();
-				emp.setEid(rs.getLong("eid"));
+				emp.setEid(rs.getInt("eid"));
 				emp.setEname(rs.getString("ename"));
 				emp.setSalary(rs.getLong("salary"));
 				emp.setEmail(rs.getString("email"));
@@ -43,17 +43,16 @@ public class EmployeeDAO {
 	}
 	
 	public static Employee addEmployee(Employee employee) {
-		String query = "insert into employees (eid,ename,salary,email,mobile,doj,dob) values (?,?,?,?,?,?,?)";
+		String query = "insert into employees (ename,salary,email,mobile,doj,dob) values (?,?,?,?,?,?)";
 		try(Connection con=DBUtil.getConnection();
 			PreparedStatement ps = con.prepareStatement(query);){
 			
-			ps.setLong(1, employee.getEid());
-			ps.setString(2, employee.getEname());
-			ps.setLong(3, employee.getSalary());
-			ps.setString(4, employee.getEmail());
-			ps.setString(5, employee.getMobile());
-			ps.setDate(6, java.sql.Date.valueOf(employee.getDoj()));
-			ps.setDate(7, java.sql.Date.valueOf(employee.getDob()));
+			ps.setString(1, employee.getEname());
+			ps.setLong(2, employee.getSalary());
+			ps.setString(3, employee.getEmail());
+			ps.setString(4, employee.getMobile());
+			ps.setDate(5, java.sql.Date.valueOf(employee.getDoj()));
+			ps.setDate(6, java.sql.Date.valueOf(employee.getDob()));
 			
 			ps.executeUpdate();
 			
@@ -64,5 +63,33 @@ public class EmployeeDAO {
 			e.printStackTrace();
 			return null;
 		}
+	}
+	
+	public static Employee updateEmployee(Employee employee) {
+		String query = "insert into employees (ename,salary,email,mobile,doj,dob) values (?,?,?,?,?,?)";
+		try(Connection con=DBUtil.getConnection();
+				PreparedStatement ps = con.prepareStatement(query);){
+			
+			ps.setString(1, employee.getEname());
+			ps.setLong(2, employee.getSalary());
+			ps.setString(3, employee.getEmail());
+			ps.setString(4, employee.getMobile());
+			ps.setDate(5, java.sql.Date.valueOf(employee.getDoj()));
+			ps.setDate(6, java.sql.Date.valueOf(employee.getDob()));
+			
+			ps.executeUpdate();
+			
+			return employee;
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public static Employee getEmployeeById(int eid) {
+		
+		return null;
 	}
 }

@@ -22,7 +22,7 @@
 				<h3><%= editMode?"Edit Employee":"Add Employee" %></h3>
 			</div>
 			<div class="card-body">
-				<form action="employee" method="post">
+				<form action="EmployeeServlet" method="post">
 					<input type="hidden" name="eid" value='<%=editMode?emp.getEid():""%>' >
 					<div class="mb-3">
 						<label class="form-label" >Employee Name:</label>
@@ -42,11 +42,11 @@
 					</div>
 					<div class="mb-3">
 						<label class="form-label" >Employee DOJ:</label>
-						<input type="date" class="form-control" name="doj" value='<%=editMode?emp.getDoj():""%>' />
+						<input type="text" class="form-control" name="doj" value='<%=editMode?emp.getDoj():""%>' />
 					</div>
 					<div class="mb-3">
 						<label class="form-label" >Employee DOB:</label>
-						<input type="date" class="form-control" name="dob" value='<%=editMode?emp.getDob():""%>' />
+						<input type="text" class="form-control" name="dob" value='<%=editMode?emp.getDob():""%>' />
 					</div>
 					<button type="submit" class="btn btn-success" >
 						<%= editMode?"Edit Employee":"Save Employee" %>

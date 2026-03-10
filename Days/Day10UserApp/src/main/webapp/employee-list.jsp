@@ -18,7 +18,7 @@
 		<div class="card shadow">
 			<div class="card-header bg-primary text-white">
 				<h1>Employee List</h1>
-				<a href="employee?action=add" class="btn btn-success" >Add Employee</a>
+				<a href="EmployeeServlet?action=new" class="btn btn-success" >Add Employee</a>
 				<a href="home.jsp" class="btn btn-warning" >Home</a>
 			</div>
 			<div class="card-body" >
@@ -49,8 +49,8 @@
 								<td><%= emp.getDoj() %> </td>
 								<td><%= emp.getDob() %> </td>
 								<td>
-									<a href="employee?action=edit&eid<%=emp.getEid() %>" class="btn btn-success">Edit</a>
-									<a href="employee?action=delete&eid<%=emp.getEid() %>" class="btn btn-danger" onClick="return('Confirm do you want to delete?')">Delete</a>
+									<a href="EmployeeServlet?action=edit&eid<%=emp.getEid() %>" class="btn btn-success">Edit</a>
+									<a href="EmployeeServlet?action=delete&eid<%=emp.getEid() %>" class="btn btn-danger" onClick="return('Confirm do you want to delete?')">Delete</a>
 								</td>
 							</tr>
 						<% }} else { %>

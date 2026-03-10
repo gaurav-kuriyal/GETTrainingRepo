@@ -14,7 +14,7 @@
 		<a class="btn btn-primary" href="EmployeeServlet?action=list">
 			View Employees
 		</a>
-		<a class="btn btn-primary" href="employee?action=new">
+		<a class="btn btn-primary" href="EmployeeServlet?action=new">
 			Add Employee
 		</a>
 	</div>
