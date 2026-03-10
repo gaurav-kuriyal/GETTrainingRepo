@@ -15,42 +15,46 @@
 		Employee emp = (Employee) request.getAttribute("employee");
 // 		emp = new Employee(1,"Gaurav",5000,"gaurav@mail.com","636767333",new LocalDate("21-01-2026"),new LocalDate("01-01-2003"));
 		boolean editMode= emp!=null;
+		boolean editable = request.getAttribute("editable")==null?true: request.getAttribute("editable")=="true"?true:false;
 	%>
 	<div class="container mt-4">
 		<div class="card shadow">
 			<div class="card-header bg-dark text-white ">
-				<h3><%= editMode?"Edit Employee":"Add Employee" %></h3>
+				<h3><%= editable?editMode?"Edit Employee":"Add Employee":"Employee Details" %></h3>
 			</div>
 			<div class="card-body">
 				<form action="EmployeeServlet" method="post">
 					<input type="hidden" name="eid" value='<%=editMode?emp.getEid():""%>' >
 					<div class="mb-3">
 						<label class="form-label" >Employee Name:</label>
-						<input type="text" class="form-control" name="ename" value='<%=editMode?emp.getEname():""%>' />
+						<input type="text" class="form-control" <%= editable?"":"readOnly" %> name="ename" value='<%=editMode?emp.getEname():""%>' />
 					</div>
 					<div class="mb-3">
 						<label class="form-label" >Employee Salary:</label>
-						<input type="text" class="form-control" name="salary" value='<%=editMode?emp.getSalary():""%>' />
+						<input type="text" class="form-control" <%= editable?"":"readOnly" %> name="salary" value='<%=editMode?emp.getSalary():""%>' />
 					</div>
 					<div class="mb-3">
 						<label class="form-label" >Employee Email:</label>
-						<input type="email" class="form-control" name="email" value='<%=editMode?emp.getEmail():""%>' />
+						<input type="email" class="form-control" <%= editable?"":"readOnly" %> name="email" value='<%=editMode?emp.getEmail():""%>' />
 					</div>
 					<div class="mb-3">
 						<label class="form-label" >Employee Mobile Number:</label>
-						<input type="tel" class="form-control" name="mobile" value='<%=editMode?emp.getMobile():""%>' />
+						<input type="tel" class="form-control" <%= editable?"":"readOnly" %> name="mobile" value='<%=editMode?emp.getMobile():""%>' />
 					</div>
 					<div class="mb-3">
 						<label class="form-label" >Employee DOJ:</label>
-						<input type="text" class="form-control" name="doj" value='<%=editMode?emp.getDoj():""%>' />
+						<input type="text" class="form-control" <%= editable?"":"readOnly" %> name="doj" value='<%=editMode?emp.getDoj():""%>' />
 					</div>
 					<div class="mb-3">
 						<label class="form-label" >Employee DOB:</label>
-						<input type="text" class="form-control" name="dob" value='<%=editMode?emp.getDob():""%>' />
+						<input type="text" class="form-control" <%= editable?"":"readOnly" %> name="dob" value='<%=editMode?emp.getDob():""%>' />
 					</div>
+					
+					<% if(editable){ %>
 					<button type="submit" class="btn btn-success" >
 						<%= editMode?"Edit Employee":"Save Employee" %>
 					</button>
+					<% } %>
 					<br>
 					<a href="employee?action=list" class="btn btn- text-white" >Back</a>
 				</form>

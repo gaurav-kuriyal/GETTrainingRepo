@@ -49,8 +49,30 @@ public class EmployeeServlet extends HttpServlet {
 		case "edit":
 			int eid = Integer.parseInt(request.getParameter("eid"));
 			Employee emp = EmployeeDAO.getEmployeeById(eid);
+			if(emp==null) return;
 			request.setAttribute("employee", emp);
 			rd = request.getRequestDispatcher("employee-form.jsp");
+			rd.forward(request, response);
+			break;
+		case "delete":
+			int eid_delete = Integer.parseInt(request.getParameter("eid"));
+			EmployeeDAO.deleteEmployeeById(eid_delete);
+			response.sendRedirect("EmployeeServlet?action=list");
+			break;
+		case "view":
+			int eid_view= Integer.parseInt(request.getParameter("eid"));
+			Employee emp_view = EmployeeDAO.getEmployeeById(eid_view);
+			if(emp_view==null) return;
+			request.setAttribute("employee", emp_view);
+			request.setAttribute("editable", false);
+			rd = request.getRequestDispatcher("employee-form.jsp");
+			rd.forward(request, response);
+			break;
+		case "search":
+			String search= request.getParameter("search");
+			List<Employee> empListSearch = EmployeeDAO.getEmployeeByQuery(search);
+			request.setAttribute("empList", empListSearch);
+			rd = request.getRequestDispatcher("employee-list.jsp");
 			rd.forward(request, response);
 			break;
 		}
@@ -77,9 +99,11 @@ public class EmployeeServlet extends HttpServlet {
 			if(EmployeeDAO.addEmployee(e) == null) {
 				out.println("Data not added");
 			}
-
 		} else {
-			
+			Employee e = new Employee(Integer.parseInt(eid),ename,salary,email,mobile,doj,dob);
+			if(EmployeeDAO.updateEmployee(e) == null) {
+				out.println("Data not updated");
+			}
 		}
 
 		response.sendRedirect("EmployeeServlet?action=list");

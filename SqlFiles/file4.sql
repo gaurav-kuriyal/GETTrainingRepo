@@ -14,3 +14,5 @@ insert into employees values (1,"Gaurav",7000.0,"gaurav@mail.com","78787878","20
 
 alter table employees 
 modify column eid int not null auto_increment;
+
+select * from employees where ename like "%aur%" or doj like '%01%';

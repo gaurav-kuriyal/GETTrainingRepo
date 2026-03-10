@@ -18,8 +18,16 @@
 		<div class="card shadow">
 			<div class="card-header bg-primary text-white">
 				<h1>Employee List</h1>
+				
 				<a href="EmployeeServlet?action=new" class="btn btn-success" >Add Employee</a>
 				<a href="home.jsp" class="btn btn-warning" >Home</a>
+				<br>
+				<br>
+				<form class="d-flex gap-2 flex-row" action="EmployeeServlet">
+					<input type="hidden" name="action" value="search" >
+					<input type="text" class="form-control" placeholder="Enter Employee Name, Email, DOJ, DOB, Mobile to search" name="search" >
+					<button class="btn btn-dark" >Search</button>
+				</form>
 			</div>
 			<div class="card-body" >
 				<table class="table table-bordered table-striped align-middle" >
@@ -49,8 +57,9 @@
 								<td><%= emp.getDoj() %> </td>
 								<td><%= emp.getDob() %> </td>
 								<td>
-									<a href="EmployeeServlet?action=edit&eid<%=emp.getEid() %>" class="btn btn-success">Edit</a>
-									<a href="EmployeeServlet?action=delete&eid<%=emp.getEid() %>" class="btn btn-danger" onClick="return('Confirm do you want to delete?')">Delete</a>
+									<a href="EmployeeServlet?action=edit&eid=<%=emp.getEid() %>" class="btn btn-success">Edit</a>
+									<a href="EmployeeServlet?action=delete&eid=<%=emp.getEid() %>" class="btn btn-danger" onClick="return('Confirm do you want to delete?')">Delete</a>
+									<a href="EmployeeServlet?action=view&eid=<%=emp.getEid() %>" class="btn btn-primary">View</a>
 								</td>
 							</tr>
 						<% }} else { %>
