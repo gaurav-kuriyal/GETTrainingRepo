@@ -77,16 +77,12 @@ public class EmployeeServlet extends HttpServlet {
 			if(EmployeeDAO.addEmployee(e) == null) {
 				out.println("Data not added");
 			}
-//			out.println(e+"Employee added");
-			List<Employee> empList = EmployeeDAO.getAllEmployees();
-			request.setAttribute("empList", empList);
-			rd = request.getRequestDispatcher("employee-list.jsp");
-			rd.forward(request, response);
 
 		} else {
 			
 		}
-		out.println("Error");
+
+		response.sendRedirect("EmployeeServlet?action=list");
 
 	}
 
