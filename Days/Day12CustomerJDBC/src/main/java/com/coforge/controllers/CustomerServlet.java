@@ -43,10 +43,20 @@ public class CustomerServlet extends HttpServlet {
 				}
 				out.println(customers);
 			}
-			if(action.equals("insert")) {
+			else if(action.equals("insert")) {
 				Customer customer = CustomerDao.addCustomer(new Customer(2,"Rajat","Hyderabad","78678687","rajat@mail.com"));
 				if(customer == null) {
 					out.println("Failed to add customer");
+					return;
+				}
+				out.println(customer);
+			}
+			else if(action.equals("get")) {
+				String custId = request.getParameter("custId");
+				long id = Long.parseLong(custId);
+				Customer customer = CustomerDao.getCustomerById(id);
+				if(customer == null) {
+					out.println("Failed to get customer");
 					return;
 				}
 				out.println(customer);

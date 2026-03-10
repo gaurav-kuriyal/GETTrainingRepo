@@ -22,8 +22,8 @@ public class CustomerDao {
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery(query);
 			
-			Customer customer = new Customer();
 			while(rs.next()) {
+				Customer customer = new Customer();
 				customer.setCusId(rs.getLong("custId"));
 				customer.setCustName(rs.getString("custName"));
 				customer.setAddress(rs.getString("address"));
@@ -68,7 +68,7 @@ public class CustomerDao {
 	public static Customer getCustomerById(long custId) {
 		try {
 			Connection con = DBUtil.getConnection();
-			String query="select * fro customers where custId = ?";
+			String query="select * from customers where custId = ?";
 			PreparedStatement ps = con.prepareStatement(query);
 			ps.setLong(1, custId);
 			ResultSet rs = ps.executeQuery();

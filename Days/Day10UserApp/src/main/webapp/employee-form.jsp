@@ -46,7 +46,7 @@
 					</div>
 					<div class="mb-3">
 						<label class="form-label" >Employee DOB:</label>
-						<input type="date" class="form-control" name="mobile" value='<%=editMode?emp.getDob():""%>' />
+						<input type="date" class="form-control" name="dob" value='<%=editMode?emp.getDob():""%>' />
 					</div>
 					<button type="submit" class="btn btn-success" >
 						<%= editMode?"Edit Employee":"Save Employee" %>

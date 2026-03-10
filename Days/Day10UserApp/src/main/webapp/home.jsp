@@ -11,8 +11,8 @@
 <body>
 	<div class="container">
 		<h1>Employee Management Application</h1>
-		<a class="btn btn-primary" href="employee?action=list">
-			View Employee
+		<a class="btn btn-primary" href="EmployeeServlet?action=list">
+			View Employees
 		</a>
 		<a class="btn btn-primary" href="employee?action=new">
 			Add Employee

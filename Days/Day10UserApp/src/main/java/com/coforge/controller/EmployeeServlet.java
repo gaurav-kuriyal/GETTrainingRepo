@@ -1,7 +1,12 @@
 package com.coforge.controller;
 
 import java.io.IOException;
+import java.util.List;
 
+import com.coforge.dao.EmployeeDAO;
+import com.coforge.models.Employee;
+
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -26,8 +31,19 @@ public class EmployeeServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String action = request.getParameter("action");
+		
+		switch(action) {
+		case "list":
+			List<Employee> empList = EmployeeDAO.getAllEmployees();
+			request.setAttribute("empList", empList);
+			RequestDispatcher rd = request.getRequestDispatcher("employee-list.jsp");
+			rd.forward(request, response);
+			break;
+		}
+		return;
 	}
+		
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

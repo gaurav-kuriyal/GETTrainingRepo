@@ -12,7 +12,7 @@
 </head>
 <body>
 	<%
-		List<Employee> employeeList=(List<Employee>) request.getAttribute("emplist");
+		List<Employee> employeeList=(List<Employee>) request.getAttribute("empList");
 	%>
 	<div class="container mt-4">
 		<div class="card shadow">
