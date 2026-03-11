@@ -20,7 +20,7 @@ import jakarta.servlet.annotation.WebFilter;
 /**
  * Servlet Filter implementation class LoggingFilter
  */
-@WebFilter("/LoggingFilter")
+@WebFilter("/LoggingWithFilter")
 public class LoggingFilter extends HttpFilter implements Filter {
 	private static final Logger logger = LogManager.getLogger(LoggingFilter.class);
        
