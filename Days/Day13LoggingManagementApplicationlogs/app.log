@@ -1,0 +1,14 @@
+2026-03-11 15:26:02 [http-nio-8081-exec-32] INFO  com.coforge.LoggingServlet - Form Submitted at 2026-03-11
+2026-03-11 15:26:02 [http-nio-8081-exec-32] INFO  com.coforge.LoggingServlet - User Name: sadf
+2026-03-11 15:26:02 [http-nio-8081-exec-32] INFO  com.coforge.LoggingServlet - Client IP: 0:0:0:0:0:0:0:1
+2026-03-11 15:26:02 [http-nio-8081-exec-32] INFO  com.coforge.LoggingServlet - User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0
+2026-03-11 15:26:02 [http-nio-8081-exec-32] INFO  com.coforge.LoggingServlet - Request Method: GET
+2026-03-11 15:27:16 [Catalina-utility-1] INFO  com.coforge.LoggingFilter - Logging filter starting time: 2026-03-11
+2026-03-11 15:27:29 [Catalina-utility-1] INFO  com.coforge.LoggingFilter - Logging filter starting time: 2026-03-11
+2026-03-11 15:27:42 [Catalina-utility-2] INFO  com.coforge.LoggingFilter - Logging filter ending time: 2026-03-11
+2026-03-11 15:27:43 [Catalina-utility-2] INFO  com.coforge.LoggingFilter - Logging filter starting time: 2026-03-11
+2026-03-11 15:29:41 [http-nio-8081-exec-23] INFO  com.coforge.LoggingServlet - Form Submitted at 2026-03-11
+2026-03-11 15:29:41 [http-nio-8081-exec-23] INFO  com.coforge.LoggingServlet - User Name: sadf
+2026-03-11 15:29:41 [http-nio-8081-exec-23] INFO  com.coforge.LoggingServlet - Client IP: 0:0:0:0:0:0:0:1
+2026-03-11 15:29:41 [http-nio-8081-exec-23] INFO  com.coforge.LoggingServlet - User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0
+2026-03-11 15:29:41 [http-nio-8081-exec-23] INFO  com.coforge.LoggingServlet - Request Method: GET
