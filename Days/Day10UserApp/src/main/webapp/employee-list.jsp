@@ -21,6 +21,9 @@
 				
 				<a href="EmployeeServlet?action=new" class="btn btn-success" >Add Employee</a>
 				<a href="home.jsp" class="btn btn-warning" >Home</a>
+				<a class="btn btn-primary" href="EmployeeServlet?action=list">
+			View All Employees
+		</a>
 				<br>
 				<br>
 				<form class="d-flex gap-2 flex-row" action="EmployeeServlet">
@@ -35,11 +38,11 @@
 						<tr>
 							<th>Employee Id</th>
 							<th>Employee Name</th>
-							<th>Employee Salary</th>
+<!-- 							<th>Employee Salary</th> -->
 							<th>Employee Email</th>
 							<th>Employee Mobile</th>
-							<th>Employee DOJ</th>
-							<th>Employee DOB</th>
+<!-- 							<th>Employee DOJ</th> -->
+<!-- 							<th>Employee DOB</th> -->
 							<th>Actions</th>
 						</tr>
 					</thead>
@@ -51,11 +54,11 @@
 							<tr>
 								<td><%= emp.getEid() %> </td>
 								<td><%= emp.getEname() %> </td>
-								<td><%= emp.getSalary() %> </td>
+<%-- 								<td><%= emp.getSalary() %> </td> --%>
 								<td><%= emp.getEmail() %> </td>
 								<td><%= emp.getMobile() %> </td>
-								<td><%= emp.getDoj() %> </td>
-								<td><%= emp.getDob() %> </td>
+<%-- 								<td><%= emp.getDoj() %> </td> --%>
+<%-- 								<td><%= emp.getDob() %> </td> --%>
 								<td>
 									<a href="EmployeeServlet?action=edit&eid=<%=emp.getEid() %>" class="btn btn-success">Edit</a>
 									<a href="EmployeeServlet?action=delete&eid=<%=emp.getEid() %>" class="btn btn-danger" onClick="return('Confirm do you want to delete?')">Delete</a>

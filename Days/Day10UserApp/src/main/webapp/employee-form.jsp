@@ -56,7 +56,8 @@
 					</button>
 					<% } %>
 					<br>
-					<a href="employee?action=list" class="btn btn- text-white" >Back</a>
+					<br>
+					<a href="EmployeeServlet?action=list" class="btn btn-dark text-white" >Back</a>
 				</form>
 			</div>
 		</div> 
