@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="container">
-		<form action="LoginServlet">
+		<form action="LoginServlet" class="mt-5">
 		  <div class="mb-3">
 		    <label for="exampleInputEmail1" class="form-label">Email address</label>
 		    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
