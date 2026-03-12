@@ -1,0 +1,13 @@
+2026-03-12 23:05:45 [http-nio-8081-exec-10] INFO  com.coforge.LoggingFilter - Incoming request -> Method: GET, URI: /Day14BankingApplication/ViewAccountsServlet, IP: 0:0:0:0:0:0:0:1
+2026-03-12 23:05:45 [http-nio-8081-exec-10] INFO  com.coforge.LoggingFilter - Response sent -> URI: /Day14BankingApplication/ViewAccountsServlet, Time Taken: 186 ms
+2026-03-12 23:05:57 [http-nio-8081-exec-1] INFO  com.coforge.LoggingFilter - Incoming request -> Method: GET, URI: /Day14BankingApplication/EditAccountServlet, IP: 0:0:0:0:0:0:0:1
+2026-03-12 23:05:57 [http-nio-8081-exec-1] INFO  com.coforge.LoggingFilter - Response sent -> URI: /Day14BankingApplication/EditAccountServlet, Time Taken: 46 ms
+2026-03-12 23:09:13 [http-nio-8081-exec-5] INFO  com.coforge.LoggingFilter - Incoming request -> Method: GET, URI: /Day14BankingApplication/DepositServlet, IP: 0:0:0:0:0:0:0:1
+2026-03-12 23:09:13 [http-nio-8081-exec-5] INFO  com.coforge.LoggingFilter - Response sent -> URI: /Day14BankingApplication/DepositServlet, Time Taken: 0 ms
+2026-03-12 23:09:18 [http-nio-8081-exec-16] INFO  com.coforge.LoggingFilter - Incoming request -> Method: POST, URI: /Day14BankingApplication/DepositServlet, IP: 0:0:0:0:0:0:0:1
+2026-03-12 23:09:19 [http-nio-8081-exec-16] INFO  com.coforge.dao.AccountDAO - Deposit of Rs. 500.0 completed
+2026-03-12 23:09:19 [http-nio-8081-exec-16] INFO  com.coforge.LoggingFilter - Response sent -> URI: /Day14BankingApplication/DepositServlet, Time Taken: 250 ms
+2026-03-12 23:09:19 [http-nio-8081-exec-2] INFO  com.coforge.LoggingFilter - Incoming request -> Method: GET, URI: /Day14BankingApplication/ViewAccountServlet, IP: 0:0:0:0:0:0:0:1
+2026-03-12 23:09:19 [http-nio-8081-exec-2] INFO  com.coforge.LoggingFilter - Response sent -> URI: /Day14BankingApplication/ViewAccountServlet, Time Taken: 0 ms
+2026-03-12 23:09:26 [http-nio-8081-exec-14] INFO  com.coforge.LoggingFilter - Incoming request -> Method: GET, URI: /Day14BankingApplication/ViewAccountsServlet, IP: 0:0:0:0:0:0:0:1
+2026-03-12 23:09:26 [http-nio-8081-exec-14] INFO  com.coforge.LoggingFilter - Response sent -> URI: /Day14BankingApplication/ViewAccountsServlet, Time Taken: 12 ms

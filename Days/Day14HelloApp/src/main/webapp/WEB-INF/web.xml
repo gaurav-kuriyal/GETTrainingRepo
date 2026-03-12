@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app
+    version="4.0"
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:javaee="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>hello</servlet-name>
+  	<servlet-class>com.coforge.HelloServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>hello</servlet-name>
+  	<url-pattern>/HelloServlet</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+  	<servlet-name>demo</servlet-name>
+  	<servlet-class>com.coforge.DemoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>demo</servlet-name>
+  	<url-pattern>/DemoServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>stud</servlet-name>
+  	<servlet-class>com.coforge.StudentServlet</servlet-class>
+  	<init-param>
+  		<param-name>driver</param-name>
+  		<param-value>com.mysql.cj.jdbc.Driver</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>url</param-name>
+  		<param-value>jdbc:mysql://localhost:3306/coforge_db</param-value>
+    </init-param>
+    <init-param>
+    	<param-name>uname</param-name>
+    	<param-value>root</param-value>
+    </init-param>
+    <init-param>
+    	<param-name>pwd</param-name>
+    	<param-value>Cfg@1234</param-value>
+    </init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>stud</servlet-name>
+  	<url-pattern>/stud</url-pattern>
+  </servlet-mapping>
+  <context-param>
+  	<param-name>UserName</param-name>
+  	<param-value>Gaurav Kuriyal</param-value>
+  </context-param>
+</web-app>
