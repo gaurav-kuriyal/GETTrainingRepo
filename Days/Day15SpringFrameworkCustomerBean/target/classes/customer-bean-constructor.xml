@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="cust" class="com.coforge.beans.Customer" scope="singleton" autowire="constructor">
+		<property name="cid" value="5"></property>
+		<property name="cname" value="Rajjo"></property>
+		<property name="email" value="rajjo@mail.com"></property>
+		<property name="mobile" value="3456789765"></property>
+	</bean>
+	
+	<bean id="address" class="com.coforge.beans.Address">
+		<constructor-arg name="hno" value="55"></constructor-arg>
+		<constructor-arg name="street" value="Gachibowli X-road"></constructor-arg>
+		<constructor-arg name="city" value="Hyderabad"></constructor-arg>
+		<constructor-arg name="state" value="Telangana"></constructor-arg>
+		<constructor-arg name="pincode" value="500032"></constructor-arg>
+	</bean>
+</beans>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:property-placeholder location="classpath:data.properties" />
+	
+	<bean id="emp" class="com.coforge.beans.Employee" autowire="byName">
+		<property name="eid" value="${Employee.eid}"></property>
+		<property name="ename" value="${Employee.ename}"></property>
+<!-- 		<property name="skillSet"> -->
+<!-- 			<set> -->
+<!-- 				<value>Java</value> -->
+<!-- 				<value>C</value> -->
+<!-- 				<value>Python</value> -->
+<!-- 				<value>MERN</value> -->
+<!-- 			</set> -->
+<!-- 		</property> -->
+		<property name="skillSet" value="skillSet"></property>
+	</bean>
+	
+	<bean id="dept" class="com.coforge.beans.Department">
+		<constructor-arg name="did" value="${Department.did}"></constructor-arg>
+		<constructor-arg name="dname" value="${Department.dname}"></constructor-arg>
+		<constructor-arg name="location" value="${Department.location}"></constructor-arg>
+	</bean>
+</beans>
