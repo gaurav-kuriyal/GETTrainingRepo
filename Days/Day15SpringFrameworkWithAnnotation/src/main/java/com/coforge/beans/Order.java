@@ -4,14 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 
 public class Order {
-	@Value("23")
+//	@Value("23")
 	private int ordId;
-	@Value("2")
+//	@Value("2")
 	private int nou;
-	@Value("5855")
+//	@Value("5855")
 	private double orderCost;
 
-	@Autowired
+//	@Autowired
 	private Book book;
 
 	public int getOrdId() {

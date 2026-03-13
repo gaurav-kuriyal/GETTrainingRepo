@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Value;
 
 public class Book {
 	
-	@Value("${Book.id}")
+//	@Value("${Book.id}")
 	private long bookId;
-	@Value("${Book.title}")
+//	@Value("${Book.title}")
 	private String title;
-	@Value("${Book.price}")
+//	@Value("${Book.price}")
 	private double price;
-	@Value("#{'${Book.authors}'.split(',')}")
+//	@Value("#{'${Book.authors}'.split(',')}")
 	private List<String> authors;
 	
 	@Override
