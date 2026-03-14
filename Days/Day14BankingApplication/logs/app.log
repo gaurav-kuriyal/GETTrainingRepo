@@ -73,3 +73,5 @@
 2026-03-13 09:15:48 [http-nio-8081-exec-7] INFO  com.coforge.LoggingFilter - Response sent -> URI: /Day14BankingApplication/ViewAccountServlet, Time Taken: 4 ms
 2026-03-13 09:15:52 [http-nio-8081-exec-10] INFO  com.coforge.LoggingFilter - Incoming request -> Method: GET, URI: /Day14BankingApplication/EditAccountServlet, IP: 127.0.0.1
 2026-03-13 09:15:52 [http-nio-8081-exec-10] INFO  com.coforge.LoggingFilter - Response sent -> URI: /Day14BankingApplication/EditAccountServlet, Time Taken: 22 ms
+2026-03-13 16:14:33 [http-nio-8081-exec-9] INFO  com.coforge.LoggingFilter - Incoming request -> Method: GET, URI: /Day14BankingApplication/, IP: 127.0.0.1
+2026-03-13 16:14:33 [http-nio-8081-exec-9] INFO  com.coforge.LoggingFilter - Response sent -> URI: /Day14BankingApplication/, Time Taken: 309 ms
