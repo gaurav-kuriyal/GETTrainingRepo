@@ -44,14 +44,37 @@ public class EmployeeDao implements EmployeeDaoInterface {
 
 	@Override
 	public void insertEmployee(Employee employee) {
-		// TODO Auto-generated method stub
-		
+		String query = "INSERT INTO emp_tab (empId,ename,salary) VALUES (?,?,?)";
+		jdbcTemplate.update(query,employee.getEmpId(),employee.getEname(),employee.getSalary());
+		System.out.println("Row Inserted");
 	}
 
 	@Override
 	public Employee getEmployeeById(long empId) {
-		// TODO Auto-generated method stub
-		return null;
+		String query = "SELECT * FROM emp_tab WHERE empId = ?";
+		RowMapper<Employee> rowMapper = (rs,rowNum)->{
+			Employee e = new Employee();
+			e.setEmpId(rs.getLong("empId"));
+			e.setEname(rs.getString("ename"));
+			e.setSalary(rs.getDouble("salary"));
+			
+			return e;
+		};
+		return jdbcTemplate.queryForObject(query, rowMapper,empId);
+	}
+
+	@Override
+	public void updateEmployee(long empId, Employee employee) {
+		String query = "UPDATE emp_tab SET ename =?,salary =? WHERE empId=?";
+		jdbcTemplate.update(query,employee.getEname(),employee.getSalary(),employee.getEmpId());
+		System.out.println("Row Updated");
+	}
+
+	@Override
+	public void deleteEmployee(long empId) {
+		String query = "DELETE from emp_tab WHERE empId=?";
+		jdbcTemplate.update(query,empId);
+		System.out.println("Row Deleted");
 	}
 
 }
