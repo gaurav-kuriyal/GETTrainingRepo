@@ -26,5 +26,13 @@ public class Order {
 	private String custName;
 	@Column(name="ordername")
 	private LocalDate ordDate;
+	
+	public Order(String custName, LocalDate ordDate) {
+		super();
+		this.custName = custName;
+		this.ordDate = ordDate;
+	}
+	
+	
 //	private List<Item> itemList;
 }
