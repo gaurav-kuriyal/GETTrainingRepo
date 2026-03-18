@@ -38,7 +38,6 @@ public class AppConfig {
 		ds.setUrl(env.getProperty("db.url"));
 		ds.setUsername(env.getProperty("db.username"));
 		ds.setPassword(env.getProperty("db.password"));
-		System.out.println("dfghjk");
 		return ds;
 	}
 	
