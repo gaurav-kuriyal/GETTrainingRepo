@@ -29,4 +29,14 @@ public class StudentService implements StudentServiceInterface{
 		return dao.getById(sid);
 	}
 
+	@Override
+	public String update(Student student) {
+		return dao.update(student);
+	}
+
+	@Override
+	public void delete(long sid) {
+		dao.delete(sid);
+	}
+
 }

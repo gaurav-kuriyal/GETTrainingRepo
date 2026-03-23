@@ -48,7 +48,7 @@ public class Customer implements Comparable<Customer>{
 	@Override
 	public int compareTo(Customer o) {
 		// TODO Auto-generated method stub
-		return (int)(this.getCustId()-o.getCustId());
+		return (int)( this.getCustId()-o.getCustId());
 	}
 	
 	public int getCustId() {

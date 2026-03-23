@@ -35,7 +35,7 @@ public class StudentDao implements StudentDaoInterface {
 
 	@Override
 	public String save(Student student) {
-		String query = "INSERT INTO student (sname,course,address) values(?,?,?)";
+		String query = "INSERT INTO student (sname,course,address) VALUES(?,?,?)";
 		jdbcTemplate.update(query,student.getSname(),student.getCourse(),student.getAddress());
 		return "Row Inserted";
 	}
@@ -52,6 +52,19 @@ public class StudentDao implements StudentDaoInterface {
 			return s;
 		};
 		return jdbcTemplate.queryForObject(query, rowMapper,sid);
+	}
+
+	@Override
+	public String update(Student student) {
+		String query = "UPDATE student set sname= ?,course =?,address =? WHERE sid = ?";
+		jdbcTemplate.update(query,student.getSname(),student.getCourse(),student.getAddress(),student.getSid());
+		return "Row Updated";
+	}
+
+	@Override
+	public void delete(long sid) {
+		String query = "DELETE FROM student WHERE sid = ?";
+		jdbcTemplate.update(query,sid);
 	}
 
 	

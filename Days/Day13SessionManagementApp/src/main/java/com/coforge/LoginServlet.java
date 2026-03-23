@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet {
 		if(email.equals("admin@gmail.com") && password.equals("admin123")) {
 			HttpSession session = request.getSession();
 			session.setAttribute("email",email);
-			session.setMaxInactiveInterval(300); // 5 min
+			  // 5 min
 			response.sendRedirect("userprofile.jsp");
 		}else {
 			RequestDispatcher rd = request.getRequestDispatcher("error.jsp");
