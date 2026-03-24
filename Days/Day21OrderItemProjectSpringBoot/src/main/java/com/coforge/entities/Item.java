@@ -1,6 +1,7 @@
 package com.coforge.entities;
 
 import java.util.HashSet;
+import java.util.Set;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,7 +26,7 @@ public class Item {
 	private double itemPrice;
 	
 	@ManyToMany(mappedBy = "items")
-	private HashSet<Order> orders;
+	private Set<Order> orders;
 
 	public Item(String itemName, double itemPrice) {
 		super();
@@ -33,7 +34,7 @@ public class Item {
 		this.itemPrice = itemPrice;
 	}
 
-	public Item(String itemName, double itemPrice, HashSet<Order> orders) {
+	public Item(String itemName, double itemPrice, Set<Order> orders) {
 		super();
 		this.itemName = itemName;
 		this.itemPrice = itemPrice;

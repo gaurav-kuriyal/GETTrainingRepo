@@ -21,10 +21,9 @@ public class OrderService {
 	@Autowired
 	ItemService itemService;
 	
-//	public List<OrderDto> getAllOrders(){
-//		OrderDto orderDto = new OrderDto();
-//		return null;
-//	}
+	public List<OrderDto> getAllOrders(){
+		return orderDao.getAll().stream().map((o)->getOrderDtoFromOrder(o)).collect(Collectors.toList());
+	}
 	
 	public OrderDto saveOrder(OrderRequestDto requestDto) {
 		Order order = new Order();

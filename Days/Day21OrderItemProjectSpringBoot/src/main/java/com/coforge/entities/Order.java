@@ -1,7 +1,8 @@
 package com.coforge.entities;
 
 import java.time.LocalDate;
-import java.util.HashSet;
+//import java.util.HashSet;
+import java.util.Set;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -9,7 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinColumns;
+//import jakarta.persistence.JoinColumns;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
@@ -31,7 +32,7 @@ public class Order {
 	
 	@ManyToMany(cascade= CascadeType.ALL)
 	@JoinTable(name="order_items",joinColumns = @JoinColumn(name="orderid"),inverseJoinColumns = @JoinColumn(name="itemid"))
-	private HashSet<Item> items;
+	private Set<Item> items;
 
 	public Order(LocalDate orderDate, double totalAmount) {
 		super();
@@ -39,7 +40,7 @@ public class Order {
 		this.totalAmount = totalAmount;
 	}
 
-	public Order(LocalDate orderDate, double totalAmount, HashSet<Item> items) {
+	public Order(LocalDate orderDate, double totalAmount, Set<Item> items) {
 		super();
 		this.orderDate = orderDate;
 		this.totalAmount = totalAmount;

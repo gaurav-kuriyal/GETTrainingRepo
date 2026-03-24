@@ -15,8 +15,9 @@ public class ItemService {
 	@Autowired
 	ItemDao itemDao;
 	
-	public Item saveItem(Item item) {
-		return itemDao.save(item);
+	public ItemDto saveItem(Item item) {
+		Item item2 = itemDao.save(item);
+		return getItemDtoFromItem(item2);
 	}
 
 	public Item getById(long itemid) {
