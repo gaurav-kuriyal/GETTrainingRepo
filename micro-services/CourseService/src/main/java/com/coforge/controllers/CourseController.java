@@ -10,28 +10,27 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.coforge.entities.Student;
-import com.coforge.services.StudentService;
+import com.coforge.entities.Course;
+import com.coforge.services.CourseService;
 
 @RestController
 @RequestMapping("/api/v1")
-public class StudentController {
+public class CourseController {
 	@Autowired
-	StudentService studentService;
+	CourseService courseService;
 	
-	@GetMapping("/student")
-	public List<Student> findAll(){
-		
-		return studentService.findAll();
+	@GetMapping("/course")
+	public List<Course> findAll(){
+		return courseService.findAll();
 	}
 	
-	@PostMapping("/student")
-	public Student save(@RequestBody Student student){
-		return studentService.save(student);
+	@PostMapping("/course")
+	public Course save(@RequestBody Course course){
+		return courseService.save(course);
 	}
 	
-	@GetMapping("/student/{studentId}")
-	public Student findById(@PathVariable("studentId") Long studentId){
-		return studentService.findById(studentId);
+	@GetMapping("/course/{courseId}")
+	public Course findById(@PathVariable("courseId") Long courseId){
+		return courseService.findById(courseId);
 	}
 }

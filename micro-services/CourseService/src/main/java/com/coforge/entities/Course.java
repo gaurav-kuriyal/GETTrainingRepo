@@ -4,7 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Transient;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,18 +12,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-public class Student {
+public class Course {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long sid;
-	private String sname;
 	private long cid;
-	@Transient
-	private Course course;
-	public Student(String sname, long cid) {
+	private String cname;
+	private double price;
+	
+	public Course(String cname, double price) {
 		super();
-		this.sname = sname;
-		this.cid = cid;
+		this.cname = cname;
+		this.price = price;
 	}
 	
 	
