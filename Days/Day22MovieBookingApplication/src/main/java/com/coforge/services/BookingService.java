@@ -27,5 +27,9 @@ public class BookingService {
 	
 	public List<Booking> getAllBookingsByCustomerName(String cname){
 		return bookingDao.getAllBookingsByCustomerName(cname);
-	};
+	}
+	
+	public List<Booking> getBookingByTotalAmount(double ta){
+		return bookingDao.getBookingByTotalAmount(ta);
+	}
 }

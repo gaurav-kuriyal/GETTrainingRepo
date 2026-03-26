@@ -8,6 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.NamedQuery;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,6 +17,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
+//@NamedQuery(name="Booking.findByMovieTitle",query="Select b from booking b where b.movie.title=:title")
+@NamedQuery(name="Booking.findByTotalAmount",query="Select b from Booking b where b.totalAmount=:ta")
 public class Booking {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

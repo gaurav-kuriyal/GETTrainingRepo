@@ -22,4 +22,9 @@ public interface BookingRepository extends JpaRepository<Booking, Long>{
 	@Query("SELECT b FROM Booking b WHERE customerName=:cname and customerMobileNum=:cmobile ")
 	public Booking getAllBookingsByCustomerAndMobile(@Param("cname") String cname,@Param("cmobile") String cmobile);
 	
+//	@Query(name="")
+//	public Movie findBookingByMovieTitle(String title)
+	
+	@Query(name="Booking.findByTotalAmount")
+	public List<Booking> findBookingByTotalAmount(double ta);
 }

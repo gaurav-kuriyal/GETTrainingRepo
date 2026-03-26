@@ -40,4 +40,9 @@ public class BookingController {
 		return bookingService.getAllBookingsByCustomerName(cname);
 	};
 	
+	@GetMapping("/totalAmount/{ta}")
+	public List<Booking> getBookingByTotalAmount(@PathVariable("ta") double ta){
+		return bookingService.getBookingByTotalAmount(ta);
+	}
+	
 }

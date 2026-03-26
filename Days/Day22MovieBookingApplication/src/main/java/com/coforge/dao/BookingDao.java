@@ -30,4 +30,8 @@ public class BookingDao {
 	public List<Booking> getAllBookingsByCustomerName(String cname){
 		return bookingRepository.getAllBookingsByCustomerName(cname);
 	};
+	
+	public List<Booking> getBookingByTotalAmount(double ta){
+		return bookingRepository.findBookingByTotalAmount(ta);
+	}
 }
