@@ -1,0 +1,30 @@
+package com.coforge.entities;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Entity
+public class Payment {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long paymentId;
+	private long orderId;
+	private double amount;
+	private String status;
+	public Payment(long orderId, double amount, String status) {
+		super();
+		this.orderId = orderId;
+		this.amount = amount;
+		this.status = status;
+	}
+	
+	
+}

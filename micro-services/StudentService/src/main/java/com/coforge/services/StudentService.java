@@ -11,6 +11,8 @@ import com.coforge.entities.Student;
 import com.coforge.feign.CourseFeignClient;
 import com.coforge.repositories.StudentRepository;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+
 @Service
 public class StudentService {
 	@Autowired
@@ -37,6 +39,7 @@ public class StudentService {
 		return studentRepository.save(student);
 	}
 
+	@CircuitBreaker(name ="CourseService", fallbackMethod = "fallback")
 	public Student findById(Long studentId){
 		Student student = studentRepository.findById(studentId).orElseThrow();
 		System.out.println(student);
@@ -44,5 +47,13 @@ public class StudentService {
 		Course course = client.getCourseByCourseId(student.getCid());
 		student.setCourse(course);
 		return student;
+	}
+	
+	public Student fallback(long sid,Exception e) {
+		Student s = studentRepository.findById(sid).orElse(null);
+		if(s==null)
+			return new Student(0,"Student Does not exist",0,new Course(0,"Course service is down",0.0));
+		s.setCourse(new Course(0,"Course Service is down",0));
+		return s;
 	}
 }
