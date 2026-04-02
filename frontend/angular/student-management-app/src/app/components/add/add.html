@@ -1,0 +1,37 @@
+<div>
+    <div><h1>Add Student</h1></div>
+    <div>
+        <form #studentForm=ngForm (ngSubmit)="addStudent()">
+            <div>
+                <label for="sid">Student Id</label>
+                <input type="number" class="form-control" id="sid" #sid="ngModel" [(ngModel)]="student.sid" required min="1" name="sid" />
+                <div *ngIf="sid.invalid && sid.touched">
+                    <small class="text-danger border border-danger px-3 rounded mt-1" *ngIf="sid.errors?.['required']">Id is required</small>
+                    <small class="text-danger border border-danger px-3 rounded mt-1" *ngIf="sid.errors?.['min']">Id must be more than 0</small>
+                </div>
+            </div>
+            <div>
+                <label for="sname">Student Name</label>
+                <input type="text" class="form-control" id="sname" #sname="ngModel" [(ngModel)]="student.sname" required minlength="3" name="sname" />
+                <div *ngIf="sname.invalid && sname.touched">
+                    <small class="text-danger border border-danger px-3 rounded mt-1" *ngIf="sname.errors?.['required']">Name is required</small>
+                    <small class="text-danger border border-danger px-3 rounded mt-1" *ngIf="sname.errors?.['minlength']">Name must be more than 3</small>
+                </div>
+            </div>
+            <div>
+                <label for="course">Course</label>
+                <input type="text" class="form-control" id="course" #course="ngModel" [(ngModel)]="student.course" required minlength="3" name="course" />
+                <div *ngIf="course.invalid && course.touched">
+                    <small class="text-danger border border-danger px-3 rounded mt-1" *ngIf="course.errors?.['required']">course is required</small>
+                    <small class="text-danger border border-danger px-3 rounded mt-1" *ngIf="course.errors?.['minlength']">course must be more than 3</small>
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" class="btn btn-success mt-2" [disabled]="studentForm.invalid">
+                    Add Student
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div>
+    <div>
+        <label for="studentId">Student Id</label>
+        <input type="number" name="studentId" id="studentId" #studentId/>
+        <button (click)="getStudentById(studentId.value)" >Search</button>
+    </div>
+    <div>
+        <h1>Update Student</h1>
+    </div>
+    <div>
+        <form [formGroup]="studentForm" (ngSubmit)="updateStudent()">
+            <div>
+                <label for="sid">Student Id</label>
+                <input type="number" class="form-control" id="sid" required formControlName="sid"
+                    min="1" name="sid" readonly />
+            </div>
+            <div>
+                <label for="sname">Student Name</label>
+                <input type="text" class="form-control" id="sname" formControlName="sname" required
+                    minlength="3" name="sname" />
+                <div *ngIf="studentForm.get('sname')?.touched && studentForm.get('sname')?.invalid">
+                    <small class="text-danger border border-danger px-3 rounded mt-1"
+                        *ngIf="studentForm.get('sname')?.errors?.['required']">Name is required</small>
+                    <small class="text-danger border border-danger px-3 rounded mt-1"
+                        *ngIf="studentForm.get('sname')?.errors?.['minlength']">Name must be more than 3</small>
+                </div>
+            </div>
+            <div>
+                <label for="course">Course</label>
+                <input type="text" class="form-control" id="course" formControlName="course"
+                    required minlength="3" name="course" />
+                <div *ngIf="studentForm.get('course')?.touched && studentForm.get('course')?.invalid">
+                    <small class="text-danger border border-danger px-3 rounded mt-1"
+                        *ngIf="studentForm.get('course')?.errors?.['required']">course is required</small>
+                    <small class="text-danger border border-danger px-3 rounded mt-1"
+                        *ngIf="studentForm.get('course')?.errors?.['minlength']">course must be more than 3</small>
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" class="btn btn-success mt-2" [disabled]="studentForm.invalid">
+                    Update Student
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

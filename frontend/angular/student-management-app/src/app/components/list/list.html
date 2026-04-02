@@ -1,0 +1,20 @@
+<div>
+    <table class="table table-striped" >
+        <thead>
+            <tr>
+                <th>Sid</th>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of studentsList">
+                <td>{{student.sid}}</td>
+                <td>{{student.sname}}</td>
+                <td>{{student.course}}</td> 
+                <td><button class="btn btn-danger" (click)="deleteStudent(student.sid)">Delete</button></td> 
+            </tr>
+        </tbody>
+    </table>
+</div>

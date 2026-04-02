@@ -1,0 +1,36 @@
+<div>
+    <h3 [style.color]="color">
+        {{name}}
+    </h3>
+    <button [disabled]="!isActive">
+        Click
+    </button>
+    <img [src]=url alt="">
+    <table [border]=customBorder >
+        <tr>
+            <th>Company</th>
+            <th>Contact</th>
+            <th>Country</th>
+        </tr>
+        <tr>
+            <td>Gaurav</td>
+            <td>Rajjo</td>
+            <td>Mayank</td>
+        </tr>
+        <tr>
+            <td>Ghaziabad</td>
+            <td>Kanpur</td>
+            <td>Lucknow</td>
+        </tr>
+    </table>
+
+    <button (click)=changeColor()>
+        Click to change color
+    </button>
+    <!-- <button (click)=changeColor($event)>
+        Click to change color of button
+    </button> -->
+
+    <h4>{{count}}</h4>
+    <button (click)=increaseCount() >Click to increase count</button>
+</div>
