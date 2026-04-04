@@ -4,7 +4,7 @@
         <form #studentForm=ngForm (ngSubmit)="addStudent()">
             <div>
                 <label for="sid">Student Id</label>
-                <input type="number" class="form-control" id="sid" #sid="ngModel" [(ngModel)]="student.sid" required min="1" name="sid" />
+                <input type="number" class="form-control" id="sid" #sid="ngModel" [(ngModel)]="student.id" required min="1" name="sid" />
                 <div *ngIf="sid.invalid && sid.touched">
                     <small class="text-danger border border-danger px-3 rounded mt-1" *ngIf="sid.errors?.['required']">Id is required</small>
                     <small class="text-danger border border-danger px-3 rounded mt-1" *ngIf="sid.errors?.['min']">Id must be more than 0</small>

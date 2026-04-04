@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="cards" *ngFor="let hotel of hotels">
+        <div class="card p-3 my-2 d-flex flex-row align-items-center justify-content-between">
+            <div class="d-flex flex-row align-items-center">
+                <span class="px-2 border-end w-fit">{{hotel.id}}</span>
+                <p class="px-2 fs-5 m-0">{{hotel.name}}</p>
+                <p class="px-2 fs-8 m-0">({{hotel.address}})</p>
+                <div class="px-2 fs-8 m-0" *ngIf="hotel.openForBooking">
+                    <span class="h-2"></span> <p class="px-2 fs-8 m-0">Open For Booking</p>
+                </div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+                <p class="px-2 fs-6 m-0 text-danger">{{hotel.contact}}</p>
+                <a class="btn btn-success" routerLink="/update">Update</a> &nbsp;
+                <button class="btn btn-danger" (click)="deleteHotel(hotel.id)">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

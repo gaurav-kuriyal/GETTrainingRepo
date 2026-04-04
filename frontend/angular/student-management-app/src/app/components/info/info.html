@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="card">
+        <table class="table table-striped" *ngIf="student">
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Student Id</td>
+                    <td>{{student.id}}</td>
+                </tr>
+                <tr>
+                    <td>Student Name</td>
+                    <td>{{student.sname}}</td>
+                </tr>
+                <tr>
+                    <td>Course</td>
+                    <td>{{student.course}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

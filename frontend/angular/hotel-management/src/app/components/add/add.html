@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="card p-4">
+        <div class="">
+            <h5 class="mb-3 text-center">Add New Hotel</h5>
+            <form #hotelForm=ngForm (ngSubmit)="addHotel()" class="needs-validation">
+                <div class="row g-3">
+                    <div class="col-sm-12">
+                        <label for="id" class="form-label">Id of the Hotel</label>
+                        <input type="number" class="form-control" id="id" name="id" #id="ngModel"
+                            [(ngModel)]="hotel.id" required min="0">
+
+                        <div *ngIf="id.invalid && id.touched">
+                            <p class="text-danger border border-danger px-3 rounded mt-1"
+                                *ngIf="id.errors?.['required']">Id is required</p>
+                            <p class="text-danger border border-danger px-3 rounded mt-1"
+                                *ngIf="id.errors?.['min']">Id should be positive</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <label for="name" class="form-label">Name of the Hotel</label>
+                        <input type="text" class="form-control" id="name" name="name" #name="ngModel"
+                            [(ngModel)]="hotel.name" required minlength="3">
+
+                        <div *ngIf="name.invalid && name.touched">
+                            <p class="text-danger border border-danger px-3 rounded mt-1"
+                                *ngIf="name.errors?.['required']">Name is required</p>
+                            <p class="text-danger border border-danger px-3 rounded mt-1"
+                                *ngIf="name.errors?.['minlength']">Name should have minimum of 3 characters</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <label for="address" class="form-label">Address of the Hotel</label>
+                        <input type="text" class="form-control" id="address" name="address" #address="ngModel"
+                            [(ngModel)]="hotel.address" minlength="3" required>
+
+                        <div *ngIf="address.invalid && address.touched">
+                            <p class="text-danger border border-danger px-3 rounded mt-1"
+                                *ngIf="address.errors?.['required']">Address is required</p>
+                            <p class="text-danger border border-danger px-3 rounded mt-1"
+                                *ngIf="address.errors?.['minlength']">Address should have minimum of 3 characters</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <hr class="my-4">
+
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="openForBooking" #openForBooking="ngModel"
+                            [(ngModel)]="hotel.openForBooking" name="openForBooking">
+                    <label class="form-check-label" for="openForBooking" name="openForBooking">Open for booking?</label>
+                </div>
+
+                <hr class="my-4">
+
+                <button class="w-100 btn btn-primary btn-lg" type="submit" [disabled]="hotelForm.invalid">Continue to checkout</button>
+            </form>
+        </div>
+    </div>
+</div>

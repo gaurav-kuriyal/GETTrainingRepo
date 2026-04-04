@@ -10,10 +10,13 @@
         </thead>
         <tbody>
             <tr *ngFor="let student of studentsList">
-                <td>{{student.sid}}</td>
+                <td>{{student.id}}</td>
                 <td>{{student.sname}}</td>
                 <td>{{student.course}}</td> 
-                <td><button class="btn btn-danger" (click)="deleteStudent(student.sid)">Delete</button></td> 
+                <td>
+                    <a class="btn btn-success" routerLink="/info/{{student.id}}">View</a>
+                    &nbsp;<a class="btn btn-primary" routerLink="/update/{{student.id}}">Update</a>
+                    &nbsp;<button class="btn btn-danger" (click)="deleteStudent(student.id)">Delete</button></td> 
             </tr>
         </tbody>
     </table>

@@ -1,9 +1,9 @@
 export class Student {
-    sid !: number;
+    id !: string;
     sname !: string;
     course !: string;
-    constructor(sid:number,sname:string,course:string){
-        this.sid = sid;
+    constructor(id:string,sname:string,course:string){
+        this.id = id;
         this.sname = sname;
         this.course = course;
     }

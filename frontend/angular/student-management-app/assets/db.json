@@ -1,0 +1,21 @@
+{
+  "students": [
+    {
+      "sid": 1,
+      "sname": "Gaurav",
+      "course": "C++",
+      "id": "dKC78A5osso"
+    },
+    {
+      "id": "HaUbg_DU1qw",
+      "sname": "Rajjo",
+      "course": "Python"
+    },
+    {
+      "id": "uGECFlROkLM",
+      "sname": "Mayank",
+      "course": "Java"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

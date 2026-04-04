@@ -1,18 +1,18 @@
 <div>
-    <div>
+    <!-- <div>
         <label for="studentId">Student Id</label>
-        <input type="number" name="studentId" id="studentId" #studentId/>
+        <input type="text" name="studentId" id="studentId" #studentId/>
         <button (click)="getStudentById(studentId.value)" >Search</button>
-    </div>
+    </div> -->
     <div>
         <h1>Update Student</h1>
     </div>
     <div>
         <form [formGroup]="studentForm" (ngSubmit)="updateStudent()">
             <div>
-                <label for="sid">Student Id</label>
-                <input type="number" class="form-control" id="sid" required formControlName="sid"
-                    min="1" name="sid" readonly />
+                <label for="id">Student Id</label>
+                <input type="text" class="form-control" id="id" required formControlName="id"
+                    min="1" name="id" readonly />
             </div>
             <div>
                 <label for="sname">Student Name</label>

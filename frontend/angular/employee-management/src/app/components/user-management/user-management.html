@@ -1,0 +1,15 @@
+<div>
+    <p>{{name}}</p>
+    <p>{{myname}}</p>
+    <button (click)="changeName()">Change name</button>
+    <button (click)="addUser()">Add User</button>
+    <h1>User List</h1>
+    <!-- {{usersList}} -->
+    <div *ngFor="let user of usersList">
+        <h4>{{user.uid}}</h4>
+        <p>{{user.uname}}</p>
+        <p>{{user.email}}</p>
+        <p>{{user.role}}</p>
+        <hr>
+    </div>
+</div>

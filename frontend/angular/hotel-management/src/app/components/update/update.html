@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="card my-3 d-flex flex-row p-3">
+        <input type="number" class="form-control" name="hotelId" id="hotelId" placeholder="Hotel Id" #hotelId/>
+        <button class="btn btn-primary" (click)="getHotelById(hotelId.value)" >Search</button>
+    </div>
+    <div class="card p-4">
+        <div class="">
+            <h5 class="mb-3 text-center">Add New Hotel</h5>
+            <form [formGroup]="hotelForm" (ngSubmit)="updateHotel()" class="needs-validation">
+                <div class="row g-3">
+                    <div class="col-sm-12">
+                        <label for="id" class="form-label">Id of the Hotel</label>
+                        <input type="number" class="form-control" id="id" name="id" formControlName="id"
+                             required min="0" readonly>
+
+                        <div *ngIf="hotelForm.get('id')?.invalid && hotelForm.get('id')?.touched">
+                            <p class="text-danger border border-danger px-3 rounded mt-1"
+                                *ngIf="hotelForm.get('id')?.errors?.['required']">Id is required</p>
+                            <p class="text-danger border border-danger px-3 rounded mt-1"
+                                *ngIf="hotelForm.get('id')?.errors?.['min']">Id should be positive</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <label for="name" class="form-label">Name of the Hotel</label>
+                        <input type="text" class="form-control" id="name" name="name" formControlName="name"
+                             required minlength="3">
+
+                        <div *ngIf="hotelForm.get('name')?.invalid && hotelForm.get('name')?.touched">
+                            <p class="text-danger border border-danger px-3 rounded mt-1"
+                                *ngIf="hotelForm.get('name')?.errors?.['required']">Name is required</p>
+                            <p class="text-danger border border-danger px-3 rounded mt-1"
+                                *ngIf="hotelForm.get('name')?.errors?.['minlength']">Name should have minimum of 3 characters</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <label for="address" class="form-label">Address of the Hotel</label>
+                        <input type="text" class="form-control" id="address" name="address" formControlName="address">
+
+                        <div *ngIf="hotelForm.get('address')?.invalid && hotelForm.get('address')?.touched">
+                            <p class="text-danger border border-danger px-3 rounded mt-1"
+                                *ngIf="hotelForm.get('address')?.errors?.['required']">Address is required</p>
+                            <p class="text-danger border border-danger px-3 rounded mt-1"
+                                *ngIf="hotelForm.get('address')?.errors?.['minlength']">Address should have minimum of 3 characters</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <hr class="my-4">
+
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="openForBooking"
+                             name="openForBooking" formControlName="openForBooking">
+                    <label class="form-check-label" for="openForBooking">Open for booking?</label>
+                </div>
+
+                <hr class="my-4">
+
+                <button class="w-100 btn btn-primary btn-lg" type="submit" [disabled]="hotelForm.get('hotelForm')?.invalid">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
