@@ -25,6 +25,7 @@ public class StudentController {
 	
 	@GetMapping("/students")
 	public ResponseEntity<List<Student>> getAllStudents (){
+		System.out.println("Enterred");
 		return new ResponseEntity<>(studentService.getAllStudents(),HttpStatus.OK);
 	}
 

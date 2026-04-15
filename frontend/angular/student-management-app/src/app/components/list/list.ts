@@ -12,6 +12,7 @@ import { RouterLink } from '@angular/router';
 })
 export class List implements OnInit{
   studentsList : Student[]=[];
+  date: Date= new Date();
   // studentsList : Student[]=[new Student(1,"Gaurav","C++"),
   //   new Student(2,"Rajjo","Python"),
   //   new Student(3,"Mayank","Java"),

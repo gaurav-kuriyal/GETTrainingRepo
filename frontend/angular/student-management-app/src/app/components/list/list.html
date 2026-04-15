@@ -11,7 +11,13 @@
         <tbody>
             <tr *ngFor="let student of studentsList">
                 <td>{{student.id}}</td>
-                <td>{{student.sname}}</td>
+                <td>{{student.sname|titlecase}}</td>
+                <td>{{date|date:"short"}}</td>
+                <td>{{date|date:"fullDate"}}</td>
+                <td>{{date|date:"dd-MM-yyyy"}}</td>
+                <td>{{date|date:"hh-mm-ss"}}</td>
+                <td>{{8989|currency:"INR"}}</td>
+                <td>{{89.89|percent}}</td>
                 <td>{{student.course}}</td> 
                 <td>
                     <a class="btn btn-success" routerLink="/info/{{student.id}}">View</a>
